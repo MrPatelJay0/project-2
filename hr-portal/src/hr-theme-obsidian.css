@@ -1,0 +1,880 @@
+
+/* ===== HR Portal: Professional Theme ===== */
+
+:root {
+  --hr-primary: #2563eb;
+  --hr-primary-dark: #1d4ed8;
+  --hr-success: #15803d;
+  --hr-background: #f3f6fb;
+  --hr-surface: #ffffff;
+  --hr-text: #172033;
+  --hr-muted: #64748b;
+  --hr-border: #e2e8f0;
+  --hr-radius: 16px;
+  --hr-shadow: 0 8px 28px rgba(15, 23, 42, 0.07);
+}
+
+body {
+  background: var(--hr-background);
+  color: var(--hr-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--hr-text);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--hr-muted);
+}
+
+.container {
+  padding-top: 12px;
+  padding-bottom: 20px;
+}
+
+/* Cards and form panels */
+.card {
+  background: var(--hr-surface);
+  border: 1px solid var(--hr-border);
+  border-radius: var(--hr-radius);
+  box-shadow: var(--hr-shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--hr-border);
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* Navigation */
+.navbar {
+  padding: 16px 24px;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.08);
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Inputs */
+.form-control,
+.form-select {
+  min-height: 46px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  color: var(--hr-text);
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--hr-primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.form-label {
+  margin-bottom: 8px;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-primary {
+  background: var(--hr-primary);
+  border-color: var(--hr-primary);
+}
+
+.btn-primary:hover {
+  background: var(--hr-primary-dark);
+  border-color: var(--hr-primary-dark);
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+.btn-success {
+  background: var(--hr-success);
+  border-color: var(--hr-success);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Tables */
+.table {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.table thead th {
+  padding: 15px 16px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--hr-border);
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 14px 16px;
+  border-color: var(--hr-border);
+}
+
+.table-responsive {
+  border: 1px solid var(--hr-border);
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .card-body {
+    padding: 18px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 11px;
+  }
+}
+
+
+/* ===== HR Admin Dashboard Enhancements ===== */
+
+.hr-dashboard {
+  min-height: 100vh;
+}
+
+.hr-dashboard .navbar {
+  min-height: 72px;
+}
+
+.hr-welcome {
+  padding: 12px 0;
+}
+
+.hr-welcome h1 {
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.hr-stat-card {
+  border: 1px solid var(--hr-border);
+  border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hr-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+.hr-stat-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #eff6ff;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.hr-stat-icon.text-success {
+  background: #dcfce7;
+}
+
+.hr-stat-icon.text-warning {
+  background: #fef3c7;
+}
+
+.hr-stat-icon.text-danger {
+  background: #fee2e2;
+}
+
+.hr-stat-card h2 {
+  font-weight: 750;
+}
+
+@media (max-width: 576px) {
+  .hr-dashboard .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .hr-welcome h1 {
+    font-size: 1.65rem;
+  }
+}
+
+
+
+/* ===== Employee Records Polish ===== */
+
+.employee-records-title {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  margin-bottom: 5px;
+}
+
+.employee-records-description {
+  color: var(--hr-muted);
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.employee-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.employee-records-table {
+  overflow: hidden;
+  border: 1px solid var(--hr-border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.employee-records-table .table thead th {
+  background: #eef4fc;
+  color: #334155;
+  padding: 16px 20px;
+  border-bottom: 1px solid #dbe4f0;
+}
+
+.employee-records-table .table tbody td {
+  padding: 16px 20px;
+  transition: background-color 0.15s ease;
+}
+
+.employee-records-table .table tbody tr:hover td {
+  background: #f4f8ff;
+}
+
+.employee-records-table .btn-danger {
+  min-width: 90px;
+  padding: 8px 14px;
+  border-radius: 9px;
+}
+
+.employee-records-footer {
+  color: var(--hr-muted);
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .employee-records-table .table thead th,
+  .employee-records-table .table tbody td {
+    padding: 12px;
+  }
+}
+
+
+
+/* ===== Fix HR Portal responsive layout ===== */
+
+html {
+  min-width: 320px;
+  overflow-x: auto;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  overflow-x: auto;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Prevent the main dashboard from becoming too narrow */
+.hr-dashboard,
+.hr-dashboard main.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Keep tables readable on smaller screens */
+.employee-records-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.employee-records-table table {
+  min-width: 720px;
+}
+
+/* Keep the add-employee form responsive */
+.hr-dashboard .card {
+  max-width: 100%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .hr-dashboard main.container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .employee-records-title {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+/* ===== Controlled Login Role Picker ===== */
+
+.role-picker {
+  position: relative;
+  width: 100%;
+}
+
+.role-picker-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #fff;
+}
+
+.role-picker-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+}
+
+.role-picker-option {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  background: #fff;
+  color: #172033;
+  text-align: left;
+  cursor: pointer;
+}
+
+.role-picker-option:hover,
+.role-picker-option:focus-visible {
+  background: #eff6ff;
+  outline: none;
+}
+
+.role-picker-option.selected {
+  background: #2563eb;
+  color: #fff;
+}
+
+.role-picker-option.selected:hover,
+.role-picker-option.selected:focus-visible {
+  background: #1d4ed8;
+}
+
+
+
+/* ===== Professional Add Employee Form ===== */
+
+.employee-form-card {
+  border: 1px solid var(--hr-border);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.employee-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.employee-form-heading h4 {
+  font-size: 1.2rem;
+  font-weight: 750;
+}
+
+.employee-form-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.employee-form-card .form-control,
+.employee-form-card .form-select {
+  min-height: 46px;
+}
+
+.employee-form-card .btn-primary {
+  min-height: 44px;
+  padding: 10px 20px;
+}
+
+.employee-form-card .form-control::placeholder {
+  color: #94a3b8;
+}
+
+@media (max-width: 576px) {
+  .employee-form-card .card-body {
+    padding: 18px !important;
+  }
+
+  .employee-form-heading {
+    align-items: flex-start;
+  }
+}
+
+
+
+/* Professional blue-lavender background */
+body {
+  background:
+    radial-gradient(
+      ellipse at 10% 5%,
+      rgba(191, 219, 254, 0.45),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 90% 85%,
+      rgba(221, 214, 254, 0.45),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #f8faff 0%,
+      #eef2ff 50%,
+      #f8fafc 100%
+    );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Keep dashboard cards clean and readable */
+.hr-stat-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hr-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(37, 99, 235, 0.12);
+}
+
+/* Accessible focus for keyboard users */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   OBSIDIAN GRADIENT THEME — appended overrides
+   Keeps existing React classes and component behavior intact.
+   ========================================================== */
+:root {
+  --hr-primary: #34d399;
+  --hr-primary-dark: #10b981;
+  --hr-success: #34d399;
+  --hr-background: #0b1120;
+  --hr-surface: #151e30;
+  --hr-text: #f1f5f9;
+  --hr-muted: #a6b2c7;
+  --hr-border: #2b3850;
+  --hr-radius: 16px;
+  --hr-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: #0b1120;
+}
+
+body {
+  color: var(--hr-text);
+  background:
+    radial-gradient(ellipse at 8% 0%, rgba(49, 46, 129, 0.38), transparent 38%),
+    radial-gradient(ellipse at 95% 18%, rgba(6, 95, 70, 0.24), transparent 34%),
+    radial-gradient(ellipse at 55% 100%, rgba(76, 29, 149, 0.18), transparent 42%),
+    linear-gradient(135deg, #080d19 0%, #0d1526 48%, #10172a 100%);
+  background-attachment: fixed;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  background: transparent;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.form-label,
+label {
+  color: #f1f5f9;
+}
+
+p,
+.text-muted,
+.employee-records-description,
+.employee-records-footer {
+  color: #a6b2c7 !important;
+}
+
+/* Dark gradient navigation */
+.navbar,
+.hr-dashboard .navbar,
+.navbar.bg-primary,
+.navbar.navbar-dark {
+  background: linear-gradient(105deg, #111c36 0%, #24204b 54%, #103c3b 100%) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+/* Shared surfaces */
+.card,
+.employee-form-card,
+.hr-stat-card {
+  color: var(--hr-text);
+  background: linear-gradient(145deg, rgba(23, 32, 51, 0.97), rgba(17, 25, 43, 0.97));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.20);
+}
+
+.card-header,
+.card-header.bg-primary,
+.bg-primary.card-header {
+  color: #f8fafc !important;
+  background: linear-gradient(105deg, #202c49, #30285c) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4,
+.card-header h5 {
+  color: #f8fafc;
+}
+
+.hr-welcome {
+  padding: 18px 0;
+}
+
+.hr-welcome > p:first-child,
+.text-primary {
+  color: #a5b4fc !important;
+}
+
+.hr-stat-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hr-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(167, 139, 250, 0.42);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.28);
+}
+
+.hr-stat-card p,
+.hr-stat-card .small {
+  color: #a6b2c7 !important;
+}
+
+.hr-stat-card h2 {
+  color: #f8fafc;
+}
+
+.hr-stat-icon {
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.22), rgba(167, 139, 250, 0.12));
+  color: #c4b5fd !important;
+}
+
+.hr-stat-icon.text-success {
+  background: rgba(52, 211, 153, 0.14);
+  color: #6ee7b7 !important;
+}
+
+.hr-stat-icon.text-warning {
+  background: rgba(251, 191, 36, 0.14);
+  color: #fcd34d !important;
+}
+
+.hr-stat-icon.text-danger {
+  background: rgba(251, 113, 133, 0.14);
+  color: #fda4af !important;
+}
+
+/* Forms and custom role picker */
+.form-control,
+.form-select,
+.role-picker-button,
+textarea.form-control {
+  color: #e5edf8 !important;
+  background-color: #0f1728 !important;
+  border: 1px solid #34425b !important;
+  border-radius: 11px;
+}
+
+.form-control::placeholder,
+textarea.form-control::placeholder {
+  color: #7f8da6 !important;
+  opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus,
+.role-picker-button:focus-visible {
+  color: #f8fafc !important;
+  background-color: #111c30 !important;
+  border-color: #34d399 !important;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.14) !important;
+}
+
+.form-select option,
+.role-picker-menu {
+  color: #e5edf8;
+  background: #151e30;
+}
+
+.role-picker-option {
+  color: #e5edf8;
+  background: #151e30;
+}
+
+.role-picker-option:hover,
+.role-picker-option:focus-visible {
+  color: #ffffff;
+  background: #25314b;
+}
+
+.role-picker-option.selected {
+  color: #052e2b;
+  background: linear-gradient(100deg, #34d399, #6ee7b7);
+}
+
+.employee-form-icon {
+  color: #a7f3d0;
+  background: rgba(52, 211, 153, 0.13);
+}
+
+/* Buttons: emerald primary, violet secondary, clear danger */
+.btn {
+  border-radius: 10px;
+  font-weight: 650;
+  transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
+}
+
+.btn-primary,
+.employee-form-card .btn-primary {
+  color: #052e2b !important;
+  background: linear-gradient(105deg, #34d399, #6ee7b7) !important;
+  border: 1px solid #34d399 !important;
+  box-shadow: 0 7px 18px rgba(16, 185, 129, 0.14);
+}
+
+.btn-primary:hover,
+.employee-form-card .btn-primary:hover {
+  color: #022c22 !important;
+  filter: brightness(1.04);
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.22);
+}
+
+.btn-success {
+  color: #052e2b !important;
+  background: linear-gradient(105deg, #34d399, #6ee7b7) !important;
+  border-color: #34d399 !important;
+}
+
+.btn-danger {
+  color: #fff1f2 !important;
+  background: linear-gradient(105deg, #be123c, #e11d48) !important;
+  border-color: #e11d48 !important;
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+  color: #e2e8f0 !important;
+  background: linear-gradient(105deg, #263449, #30314f) !important;
+  border-color: #475569 !important;
+}
+
+.btn-light,
+.btn-outline-light {
+  color: #f1f5f9 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(226, 232, 240, 0.24) !important;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Tables */
+.table-responsive,
+.employee-records-table {
+  color: #e5edf8;
+  background: rgba(15, 23, 40, 0.82);
+  border: 1px solid #2b3850;
+  border-radius: 14px;
+}
+
+.table {
+  --bs-table-color: #e5edf8;
+  --bs-table-bg: transparent;
+  --bs-table-border-color: #2b3850;
+  --bs-table-striped-bg: rgba(148, 163, 184, 0.045);
+  --bs-table-striped-color: #e5edf8;
+  --bs-table-hover-bg: rgba(167, 139, 250, 0.08);
+  --bs-table-hover-color: #ffffff;
+  color: #e5edf8;
+  margin-bottom: 0;
+}
+
+.table thead th,
+.employee-records-table .table thead th,
+.table-dark th {
+  color: #dbeafe !important;
+  background: linear-gradient(100deg, #202c49, #28264b) !important;
+  border-color: #34425b !important;
+}
+
+.table tbody td,
+.employee-records-table .table tbody td {
+  color: #dbe4f0;
+  background-color: transparent;
+  border-color: #263449;
+}
+
+.table tbody tr:hover td,
+.employee-records-table .table tbody tr:hover td {
+  background-color: rgba(167, 139, 250, 0.07);
+}
+
+.employee-count-badge {
+  color: #a7f3d0;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+}
+
+/* Status labels and Bootstrap utility backgrounds */
+.badge,
+.text-bg-success {
+  border-radius: 999px;
+}
+
+.bg-light,
+.table-light {
+  color: #e5edf8 !important;
+  background-color: #202c42 !important;
+}
+
+.text-dark {
+  color: #e5edf8 !important;
+}
+
+hr,
+.divider {
+  border-color: #2b3850;
+  opacity: 1;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(52, 211, 153, 0.75);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #052e2b;
+  background: #6ee7b7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hr-welcome h1 {
+    font-size: 1.55rem;
+  }
+
+  .hr-stat-card .card-body {
+    padding: 16px;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+}
